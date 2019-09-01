@@ -1,12 +1,13 @@
-spring:
-  profiles:
-    active: dev
-  cloud:
-    config:
-      #uri: http://localhost:8848 #配置configserver单个服务器
-      discovery:
-        enabled: true
-        service-id: config-server # 从Eureka通过服务名获取多个配置服务
-      label: master #分支
-      name: application-course #那个文件
-      profile: ${spring.profiles.active} # 那个环境
+server: 
+port: 9002 
+spring: 
+application: 
+name: hrm-course 
+datasource: 
+driver-class-name: com.mysql.jdbc.Driver 
+url: jdbc:mysql://localhost:3306/hrm_course 
+username: root 
+password: 111111 
+mybatis-plus: 
+mapper-locations: classpath:com/zxd/hrm/mapper/*Mapper.xml 
+type-aliases-package: com.zxd.hrm.domain,com.zxd.hrm.query
